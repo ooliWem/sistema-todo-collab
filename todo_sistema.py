@@ -1,5 +1,23 @@
 tarefas = []
 
+def  adicionar_tarefa ():
+    nova_tarefa = input("Digite a tarefa: ")
+    # Cada tarefa é uma TUPLA: (descrição, estado)
+    tarefa_com_estado = (nova_tarefa, "Pendente")
+    tarefas.append(tarefa_com_estado)
+    print("Tarefa adicionada!")
+
+def listar_tarefas():
+    if len(tarefas) == 0:
+       print ("nenhuma tarefa cadastrada.")
+    return
+
+print("\n--- LISTA DE TAREFA ---")
+for i in range(len(tarefas)):
+    descricao, estado = tarefas[i]  # desempacota a tupla
+    print(f"{i+1}. [{estado}] {descricao}")
+ 
+
 def mostrar_menu(): 
     print("\n" + "=" * 25)
     print("SISTEMA TO DO - Organizador de Tarefas")
