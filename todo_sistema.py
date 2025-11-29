@@ -9,13 +9,13 @@ def  adicionar_tarefa ():
 
 def listar_tarefas():
     if len(tarefas) == 0:
-       print ("nenhuma tarefa cadastrada.")
-       return
-
-print("\n--- LISTA DE TAREFA ---")
-for i in range(len(tarefas)):
-    descricao, estado = tarefas[i]  # desempacota a tupla
-    print(f"{i+1}. [{estado}] {descricao}")
+        print("Nenhuma tarefa cadastrada.")
+        return
+    
+    print("\n--- LISTA DE TAREFAS ---")
+    for i in range(len(tarefas)):
+        descricao, estado = tarefas[i]  # desempacota a tupla
+        print(f"{i+1}. [{estado}] {descricao}")
 
 def concluir_tarefa():
     listar_tarefas()
