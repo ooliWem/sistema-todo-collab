@@ -10,7 +10,7 @@ def  adicionar_tarefa ():
 def listar_tarefas():
     if len(tarefas) == 0:
        print ("nenhuma tarefa cadastrada.")
-    return
+       return
 
 print("\n--- LISTA DE TAREFA ---")
 for i in range(len(tarefas)):
