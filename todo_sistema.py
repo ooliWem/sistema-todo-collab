@@ -16,8 +16,44 @@ print("\n--- LISTA DE TAREFA ---")
 for i in range(len(tarefas)):
     descricao, estado = tarefas[i]  # desempacota a tupla
     print(f"{i+1}. [{estado}] {descricao}")
- 
 
+def concluir_tarefa():
+    listar_tarefas()
+    
+    if len(tarefas) == 0:
+        return
+    
+    try: 
+        num = int(input("Número da tarefa concluída: ")) - 1
+        
+        if num >= 0 and num < len(tarefas): 
+            descricao, estado = tarefas[num]
+            tarefas[num] = (descricao, "Concluída")
+            print("Tarefa marcada como concluída!")
+        else: 
+            print("Número Inválido!")
+    except:
+        print("Digite um número válido!")
+
+def editar_tarefa():
+    listar_tarefas()
+    
+    if len(tarefas) == 0:
+        return
+    
+    try: 
+        num = int(input("Número da tarefa para editar: ")) - 1
+        
+        if num >= 0 and num < len(tarefas): 
+            descricao_antiga, estado = tarefas[num]
+            nova_descricao = input(f"Nova descrição (atual: {descricao_antiga}): ")
+            tarefas[num] = (nova_descricao, estado)
+            print("Tarefa editada com sucesso!")
+        else: 
+            print("Número Inválido!")
+    except:
+        print("Digite um número válido!")
+        
 def mostrar_menu(): 
     print("\n" + "=" * 25)
     print("SISTEMA TO DO - Organizador de Tarefas")
